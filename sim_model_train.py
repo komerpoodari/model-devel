@@ -24,6 +24,7 @@ EPOCHS = 15
 IMG_H = 600
 IMG_W = 800
 IMG_CHN = 3
+NUM_CLASSES = 4  # for simulator data set red = 0, green = 1, yellow = 2, not_light = 3
 
 MODEL_FILE_NAME = './sim_model.h5'
 
@@ -106,7 +107,7 @@ def construct_model():
     
     #Define Input layer
     #Add bottom cropping until bottom 180 the car bonnet is visible, mostly
-    model.add(Cropping2D(cropping=((0, BOTTOM_CROP), (0, 0)),
+    model.add(Cropping2D(cropping=((0, 0), (0, 0)),
                          input_shape=(IMG_H, IMG_W, IMG_CHN)))
     #Normalize the pixel values
     model.add(Lambda(lambda x: x/127.5 - 1.))

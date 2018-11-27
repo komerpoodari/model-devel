@@ -20,7 +20,7 @@ from keras.callbacks import ModelCheckpoint
 ROOT_PATH = './'
 BATCH_SIZE = 4
 EPOCHS = 20
-NUM_CLASSES = 3
+NUM_CLASSES = 3 # for site data set red = 0, not red = 1, not light = 2
 
 IMG_H = 600
 IMG_W = 800
@@ -150,7 +150,7 @@ if __name__ == "__main__":
     # check if csv file is available, if not inform to prepare one.
     if not os.path.exists('./site_train.csv'):
         print('Please prepare ./site_train.csv by running prepare_csvs.py')
-        return
+        exit
     
     print('CSV already present')
     data_set = pd.read_csv(os.path.join('./site_train.csv'))
