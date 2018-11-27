@@ -9,3 +9,5 @@
 - Load **.h5** files and predict.
 
 _Please keep the python version **same** while training and inference_ otherwise you may run into [Bad Marshal data error](https://github.com/keras-team/keras/issues/7440)
+
+Thanks to github.com/rekon for the original working version.
